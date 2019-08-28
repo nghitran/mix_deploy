@@ -21,7 +21,7 @@ if [ -f appspec.yml ]; then
     cp -v appspec.yml ${OUTPUT_DIR}
 fi
 
-cp -v "_build/${MIX_ENV}/rel/${APP_NAME}/releases/${VERSION}/${APP_NAME}.tar.gz" "${OUTPUT_DIR}/${APP_NAME}.tar.gz"
+tar -czf "${OUTPUT_DIR}/${APP_NAME}.tar.gz" -C _build/${MIX_ENV}/rel/${APP_NAME} .
 
 mkdir -p ${OUTPUT_DIR}/systemd
 cp -v _build/${MIX_ENV}/systemd/lib/systemd/system/* "${OUTPUT_DIR}/systemd"
