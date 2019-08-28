@@ -23,6 +23,7 @@ mkdir -p "$DEPLOY_DIR/bin"
 chmod -R 750 "$DEPLOY_DIR/bin"
 chown -R $DEPLOY_USER:$APP_GROUP "$DEPLOY_DIR/bin"
 
+chmod -R 750 "$DEPLOY_DIR/current/bin"
 chmod -R 750 "$DEPLOY_DIR/current/releases/$VERSION/elixir"
 chmod -R 750 "$DEPLOY_DIR/current/releases/$VERSION/iex"
 chmod -R 750 "$DEPLOY_DIR/current/erts-<%= :erlang.system_info(:version) %>/bin"
